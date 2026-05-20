@@ -1,23 +1,62 @@
 import pandas as pd
 import numpy as np
 import random 
-#from scipy.stats import norm
-
-cara = 1
-sello = 0
-num_de_lanzamiento = 10000
-cara_sello= []
+import matplotlib.pyplot as plt
+import seaborn as sns
+import math
 
 
 
-for i in range(0,num_de_lanzamiento):
-    cara_sello.append(random.randint(sello,cara))
+cantidad_de_tiras_moneda = 10000
+numero_de_experimentos = 1000
+
+simulacion = np.random.randint(0,2,size=(cantidad_de_tiras_moneda,cantidad_de_tiras_moneda)) # 10mil lanzamientos , 1mil experimetos / simulaciones
+conteo = np.sum(simulacion,axis=1) # por cada experimento cuento los 1 que son las caras
+conteo:list = conteo
+
+print(simulacion)
+print(conteo)
+df =pd.DataFrame({
+    'cantidad_de_caras' : conteo
+})
+
+desvio = df.std()
+media = df.mean()
+moda = df.mode()
 
 
 
-df1 = pd.DataFrame ({  'cara/sello' : cara_sello })
 
-print(df1.head())
+# Graficamos la distribucion de los datos
+plt.figure(figsize=(8, 5))
+plt.hist(conteo, bins=17, color='lightgreen', edgecolor='black', alpha=1)
+
+plt.title('Histograma de frecuencia de caras')
+plt.xlabel('Cantidad de Caras')
+plt.ylabel('Frecuencia')
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.show()
+
+
+cantidad = 0 #contador de cantidad donde hay mas de 5200 caras
+
+for i in range(len(conteo)):
+   if conteo [i] >= 5200:
+        cantidad += 1
+
+probabilidad =  cantidad* 100 / cantidad_de_tiras_moneda
+print(f'la probabilidad de salgan mas 5200 caras es : {probabilidad}%')
+
+
+
+
+
+
+
+
+
+
+
 
 
     
