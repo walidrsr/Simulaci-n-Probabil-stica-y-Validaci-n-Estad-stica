@@ -19,7 +19,7 @@ df =pd.DataFrame({
 
 
 
-#desvio = df.std()
+desvio = df.std()
 #media = df.mean()
 #moda = df.mode()
 
