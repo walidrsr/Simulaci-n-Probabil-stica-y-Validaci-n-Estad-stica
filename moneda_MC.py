@@ -2,10 +2,6 @@ import pandas as pd
 import numpy as np
 import random 
 import matplotlib.pyplot as plt
-import seaborn as sns
-import math
-
-
 
 cantidad_de_tiras_moneda = 10000
 numero_de_experimentos = 1000
@@ -14,15 +10,18 @@ simulacion = np.random.randint(0,2,size=(cantidad_de_tiras_moneda,cantidad_de_ti
 conteo = np.sum(simulacion,axis=1) # por cada experimento cuento los 1 que son las caras
 conteo:list = conteo
 
-print(simulacion)
-print(conteo)
+#print(simulacion)
+#print(conteo)
+
 df =pd.DataFrame({
     'cantidad_de_caras' : conteo
-})
+}) #los convierto a dataframe para poder manipular mejor los datos
 
-desvio = df.std()
-media = df.mean()
-moda = df.mode()
+
+
+#desvio = df.std()
+#media = df.mean()
+#moda = df.mode()
 
 
 
@@ -39,12 +38,12 @@ plt.show()
 
 
 cantidad = 0 #contador de cantidad donde hay mas de 5200 caras
-
-for i in range(len(conteo)):
+ 
+for i in range(len(conteo)):  # Aca recorro toda la lista y los que son mayores a 5200 le sumo uno a cantidad
    if conteo [i] >= 5200:
         cantidad += 1
 
-probabilidad =  cantidad* 100 / cantidad_de_tiras_moneda
+probabilidad =  cantidad* 100 / cantidad_de_tiras_moneda # Determino la probabilidad de que las "caras" salgan mas de 5200 veces
 print(f'la probabilidad de salgan mas 5200 caras es : {probabilidad}%')
 
 
