@@ -10,7 +10,8 @@ Destacados #### 1. [Simulacion Probabilistica]
 * **Objetivo:** Validar empíricamente el Teorema del Límite Central, determinar la probabilidad exacta de ocurrencia de eventos de cola y optener la visualización de la dispersión de datos.
 * **Resultado:** * **Probabilidad Empírica del 0.0%:** Se demostró numéricamente que superar las 5.200 caras es un evento de cola extremadamente raro (a 4 desvíos estándar del promedio)
   * **Validación Estadística:** La distribución de los 1.000 escenarios convergió en una campana de Gauss perfecta, confirmando que el algoritmo aleatorio es simétrico y libre de sesgos.
-                                 <img width="800" height="500" alt="distribucion normal" src="https://github.com/user-attachments/assets/9b2599ca-a2a4-4c7f-9adc-6f94ae0dbe13" />
+                                 <img width="1000" height="700" alt="distribucion normal" src="https://github.com/user-attachments/assets/986f1c9b-d9ea-4a87-8336-d7097f801529" />
+
 
 
 ### Tech Stack & Habilidades Técnicas
