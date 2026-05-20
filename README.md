@@ -12,4 +12,12 @@ Destacados #### 1. [Simulacion Probabilistica]
   * **Validación Estadística:** La distribución de los 1.000 escenarios convergió en una campana de Gauss perfecta, confirmando que el algoritmo aleatorio es simétrico y libre de sesgos.
 
 
-**Tech Stack:** Python ### Habilidades Técnicas ```python skills = { "languages": ["Python"], "visualization": ["matplotlib.pyplot"], "ml_libraries": ["pandas","numpy","random"], "tools": ["Git", "VS Code"] }
+### Tech Stack & Habilidades Técnicas
+
+```python
+skills = {
+    "languages": ["Python", "SQL"],
+    "data_analysis": ["Pandas", "NumPy"],
+    "visualization": ["Matplotlib", "Power BI"],
+    "tools": ["Git", "GitHub", "VS Code"]
+}
