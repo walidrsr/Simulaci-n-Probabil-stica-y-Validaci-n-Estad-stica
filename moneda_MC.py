@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 cantidad_de_tiras_moneda = 10000
 numero_de_experimentos = 1000
 
-simulacion = np.random.randint(0,2,size=(cantidad_de_tiras_moneda,cantidad_de_tiras_moneda)) # 10mil lanzamientos , 1mil experimetos / simulaciones
+simulacion = np.random.randint(0,2,size=(numero_de_experimentos,cantidad_de_tiras_moneda)) # 10mil lanzamientos , 1mil experimetos / simulaciones
 conteo = np.sum(simulacion,axis=1) # por cada experimento cuento los 1 que son las caras
 conteo:list = conteo
 
@@ -43,8 +43,8 @@ for i in range(len(conteo)):  # Aca recorro toda la lista y los que son mayores 
    if conteo [i] >= 5200:
         cantidad += 1
 
-probabilidad =  cantidad* 100 / cantidad_de_tiras_moneda # Determino la probabilidad de que las "caras" salgan mas de 5200 veces
-print(f'la probabilidad de salgan mas 5200 caras es : {probabilidad}%')
+probabilidad =  (cantidad / numero_de_experimentos ) * 100# Determino la probabilidad de que las "caras" salgan mas de 5200 veces
+print(f'la probabilidad de que salgan mas de 5200 caras es : {probabilidad}%')
 
 
 
