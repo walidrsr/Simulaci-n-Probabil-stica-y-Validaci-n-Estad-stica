@@ -19,18 +19,19 @@ df =pd.DataFrame({
 
 
 
-#desvio = df.std()
-#media = df.mean()
-#moda = df.mode()
+media_real = df['cantidad_de_caras'].mean()
+desvio_real = df['cantidad_de_caras'].std()
 
 
 
 
 # Graficamos la distribucion de los datos
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(10, 7))
 plt.hist(conteo, bins=17, color='lightgreen', edgecolor='black', alpha=1)
-
+plt.axvline(5200, color='red', linestyle='--', linewidth=2.5, label='Evento Extremo (5200)')
 plt.title('Histograma de frecuencia de caras')
+plt.text(5210, 80, '5200 (Probabilidad esperada del 0.0%)', color='red', fontweight='bold', rotation=90)
+plt.text(media_real + 5, 200, '68 % de los datos (±1σ)', color='green', fontsize=9)
 plt.xlabel('Cantidad de Caras')
 plt.ylabel('Frecuencia')
 plt.grid(axis='y', linestyle='--', alpha=0.5)
